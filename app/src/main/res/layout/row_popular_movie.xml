@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#333">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+
+    android:layout_marginTop="10dp"
+    android:background="@drawable/borderlayout">
 
     <ImageView
         android:id="@+id/iv_image_pop_movie"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="150dp"
+        android:layout_height="200dp" />
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:background="#455a64"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tv_title_pop_movie"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:textColor="#d2f0ff"
+            android:gravity="left"
+            android:text="@string/popular_movie_text_sample"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="9sp"
+            android:textColor="#d2f0ff"
+            android:layout_gravity="center"
+            android:text=">"/>
     </LinearLayout>
 </LinearLayout>
