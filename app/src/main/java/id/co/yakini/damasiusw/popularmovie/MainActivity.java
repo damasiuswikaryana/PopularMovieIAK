@@ -35,7 +35,6 @@ import id.co.yakini.damasiusw.popularmovie.utilities.Constant;
 
 public class MainActivity extends AppCompatActivity
 implements PopularMovieAdapter.ItemClickListener {
-
     public static final String TAG = MainActivity.class.getSimpleName();
     public List<PopularMovieResult> popularMovieResults = new ArrayList<>();
     @BindView(R.id.rv_popular_movie) RecyclerView mRecyclerView;
@@ -53,12 +52,10 @@ implements PopularMovieAdapter.ItemClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mAdapter = new PopularMovieAdapter(popularMovieResults, this);
+        mAdapter = new PopularMovieAdapter(getApplicationContext(), popularMovieResults, this);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
 
         mRecyclerView.setLayoutManager(layoutManager);
-        mDividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), layoutManager.getOrientation());
-        mRecyclerView.addItemDecoration(mDividerItemDecoration);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -118,7 +115,7 @@ implements PopularMovieAdapter.ItemClickListener {
 
     @Override
     public void onItemClick(PopularMovieResult data, int position) {
-        Intent startDetailActivity = new Intent(MainActivity.this, MoveDetail.class);
+        Intent startDetailActivity = new Intent(MainActivity.this, MovieDetail.class);
         startDetailActivity.putExtra("data", gson.toJson(data));
         startDetailActivity.putExtra("position", position);
         startActivity(startDetailActivity);

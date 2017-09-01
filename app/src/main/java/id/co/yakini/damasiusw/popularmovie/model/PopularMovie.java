@@ -7,13 +7,13 @@ import java.util.List;
  */
 
 public class PopularMovie {
-    private List<PopularMovieResult> list;
+    private List<PopularMovieResult> results;
 
     public List<PopularMovieResult> getList() {
-        return list;
+        return results;
     }
 
-    public void setList(List<PopularMovieResult> list) {
-        this.list = list;
+    public void setList(List<PopularMovieResult> results) {
+        this.results = results;
     }
 }
